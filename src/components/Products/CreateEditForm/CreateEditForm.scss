@@ -1,0 +1,26 @@
+.form-wrapper {
+  background-color: rgba(75, 12, 105, 0.7);
+  padding: 40px 60px;
+  border-radius: 5px;
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.close-icon {
+  font-size: 30px;
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #3a0c47;
+    box-shadow: 0px 0px 10px #d1c4ce;
+    border-radius: 50%;
+  }
+}

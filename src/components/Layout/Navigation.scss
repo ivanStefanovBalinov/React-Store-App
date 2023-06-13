@@ -1,0 +1,30 @@
+nav {
+  background-color: #200341;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 10;
+
+  ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding-right: 300px;
+
+    li,
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      box-sizing: border-box;
+    }
+  }
+}

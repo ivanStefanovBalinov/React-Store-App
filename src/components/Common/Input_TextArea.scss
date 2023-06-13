@@ -1,0 +1,16 @@
+.input,
+.textarea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 20px;
+  width: 400px;
+  font-weight: bold;
+  input,
+  textarea {
+    width: 220px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+}

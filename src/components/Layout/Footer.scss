@@ -1,0 +1,23 @@
+.footer-wrapper {
+  background-color: #180330;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+
+  a {
+    font-size: 25px;
+    color: #fff;
+    padding-left: 200px;
+  }
+
+  p {
+    color: #fff;
+    // padding-right: 300px;
+  }
+}
