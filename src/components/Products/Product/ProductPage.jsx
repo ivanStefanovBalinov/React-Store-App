@@ -5,16 +5,17 @@ import routes from "../../../utils/constants";
 import ProductDeleteModal from "./ProductDeleteModal";
 import useCalculateDiscount from "../../../hooks/useCalculateDiscount";
 import ImageModal from "./ImageModal";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   deleteProductAction,
   fetchProductById,
 } from "../../../store/features/products-actions";
+import { useFetchSingleProduct } from "../../../store/features/products-hooks";
 
 const ProductPage = () => {
   const params = useParams();
   const navigation = useNavigate();
-  const product = useSelector((state) => state.products.singleProduct);
+  const product = useFetchSingleProduct();
   const dispatch = useDispatch();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
@@ -34,7 +35,7 @@ const ProductPage = () => {
   }
 
   const onClickEdit = () => {
-    navigation(`/products/edit/${state.product.id}`);
+    navigation(`/products/edit/${product.id}`);
   };
 
   const onClickDelete = () => {
@@ -46,7 +47,6 @@ const ProductPage = () => {
   };
 
   const onConfirmClick = () => {
-    alert("Dispatch deleteProduct triggered");
     dispatch(deleteProductAction(params.productId));
     navigation(routes.products.path);
   };

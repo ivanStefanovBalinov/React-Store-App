@@ -1,27 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ProductCard from "../Products/ProductCard/ProductCard";
 import "../Products/AllProducts/AllProducts.scss";
+import { useDispatch } from "react-redux";
+import { useGetProductsByCategory } from "../../store/features/products-hooks";
+import { getProductsByCategory } from "../../store/features/products-actions";
 
 const CategoryReusable = (props) => {
-  const [products, setProducts] = useState();
-
+  const products = useGetProductsByCategory();
+  const dispatch = useDispatch();
   const { category, title } = props;
-
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch(
-        `https://dummyjson.com/products/category/${category}`
-      );
-      const data = await response.json();
-      setProducts(data.products);
-    } catch (error) {
-      console.log({ error });
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  dispatch(getProductsByCategory(category));
+  // useEffect(() => {
+  //   dispatch(getProductsByCategory(category));
+  // }, [dispatch]);
 
   if (!products) {
     return <p>LOADING...</p>;

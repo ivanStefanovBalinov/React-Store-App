@@ -1,31 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./AllProducts.scss";
 import ProductCard from "../ProductCard/ProductCard";
 import SideBar from "../../Layout/SideBar";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAllProducts } from "../../../store/features/products-actions";
-import { productsActions } from "../../../store/features/products-slice";
+import { useFetchAllProducts } from "../../../store/features/products-hooks";
 
 const AllProducts = () => {
-  const isUpdated = useSelector((state) => state.products.changed);
-  const products = useSelector((state) => state.products.products);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (isUpdated) {
-      alert("Update data");
-      dispatch(productsActions.updateProducts());
-      console.log({ updated: products });
-    } else {
-      alert("Fetch all data");
-      dispatch(fetchAllProducts());
-      console.log({ fetched: products });
-    }
-  }, [dispatch]);
-
-  useEffect(() => {
-    console.log(isUpdated);
-  }, []);
+  const products = useFetchAllProducts();
 
   return (
     <div className="allProducts-page-wrapper">

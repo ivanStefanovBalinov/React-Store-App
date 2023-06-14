@@ -1,36 +1,45 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const productSlice = createSlice({
   name: "Products",
   initialState: {
     products: [],
     singleProduct: {},
-    updatedProducts: [],
-    changed: false,
+    editTargetProduct: {},
+    productsByCategory: [],
   },
   reducers: {
     getAllProduct(state, action) {
       state.products = action.payload;
-      state.changed = true;
     },
     getSingleProduct(state, action) {
       state.singleProduct = action.payload;
     },
     deleteProduct(state, action) {
-      const id = action.payload;
-      const filteredData = state.products.filter(
-        (product) => product.id !== id
-      );
-      //   state.updatedProducts = [...state.updatedProducts, filteredData];
-      console.log({
-        id: id,
-        filter: filteredData,
-        initialData: current(state.products),
-        updatedData: current(state.updatedProducts) || "Empty",
-      });
+      const id = Number(action.payload);
+      state.products = state.products.filter((product) => product.id !== id);
     },
-    updateProducts(state) {
-      state.products = state.updatedProducts;
+    editProduct(state, action) {
+      const targetIndex = state.products.findIndex(
+        (product) => product.id === action.payload.id
+      );
+      state.products[targetIndex] = action.payload.updatedObject;
+    },
+    getProductById(state, action) {
+      const id = Number(action.payload);
+      const product = state.products.find((product) => product.id === id);
+      if (product) {
+        state.editTargetProduct = product;
+      } else {
+        return;
+      }
+    },
+    addNewProduct(state, action) {
+      const newProduct = action.payload;
+      state.products.push(newProduct);
+    },
+    getProductsByCategory(state, action) {
+      state.productsByCategory = action.payload;
     },
   },
 });

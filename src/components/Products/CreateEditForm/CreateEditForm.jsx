@@ -17,7 +17,7 @@ const CreateEditForm = (props) => {
     brand: product?.brand || "",
     category: product?.category || "",
     discountPercentage: product?.discountPercentage || "",
-    id: product?.id || uniqid(),
+    id: product?.id || Math.floor(Math.random() * 123425123312312),
     images: product?.images || [],
     price: product?.price || "",
     rating: product?.rating || 0,
@@ -28,7 +28,6 @@ const CreateEditForm = (props) => {
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    alert("Clicked");
     onSubmit(formValues);
   };
 
