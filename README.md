@@ -1,9 +1,9 @@
 # React-Store-App
 Store app with fake back-end by dummyjson.com
 
-#Installation
+<h2>Installation</h2>
 npm install
 
-#Run app
+<h2>Start application</h2>
 npm run dev
 
