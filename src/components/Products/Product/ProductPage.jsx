@@ -117,7 +117,7 @@ const ProductPage = () => {
       {showImageModal ? (
         <ImageModal
           img={image}
-          title={title}
+          title={product.title}
           onClickClose={() => {
             setShowImageModal(false);
           }}

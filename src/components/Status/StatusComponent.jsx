@@ -4,9 +4,6 @@ import { useGetStatus } from "../../store/features/products-hooks";
 
 const StatusComponent = () => {
   const status = useGetStatus();
-  useEffect(() => {
-    console.log({ status: status });
-  }, []);
 
   return (
     <div className="status-wrapper">
