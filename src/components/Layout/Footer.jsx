@@ -6,7 +6,10 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <div className="footer-wrapper">
-      <a href="">
+      <a
+        href="https://github.com/ivanStefanovBalinov/React-Store-App"
+        target="_blank"
+      >
         <FontAwesomeIcon className="gitHub-icon" icon={faGithub} /> GitHub Link
       </a>
       <p> &#169; React-Exam 2023 Ivan Balinov</p>

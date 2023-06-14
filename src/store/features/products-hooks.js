@@ -11,3 +11,5 @@ export const useGetProductToEdit = () =>
 
 export const useGetProductsByCategory = () =>
   useSelector((state) => state.products.productsByCategory);
+
+export const useGetStatus = () => useSelector((state) => state.ui.notification);

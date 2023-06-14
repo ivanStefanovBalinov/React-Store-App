@@ -9,19 +9,16 @@ const CategoryReusable = (props) => {
   const products = useGetProductsByCategory();
   const dispatch = useDispatch();
   const { category, title } = props;
-  dispatch(getProductsByCategory(category));
-  // useEffect(() => {
-  //   dispatch(getProductsByCategory(category));
-  // }, [dispatch]);
 
-  if (!products) {
-    return <p>LOADING...</p>;
-  }
+  useEffect(() => {
+    dispatch(getProductsByCategory(category));
+  }, [category, dispatch]);
+
   return (
     <div className="allProducts-page-wrapper">
       <h1>{title}</h1>
       <section>
-        {products?.map((product) => {
+        {products.map((product) => {
           return <ProductCard product={product} key={product.id} />;
         })}
       </section>

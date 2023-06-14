@@ -6,6 +6,7 @@ import { useGetProductToEdit } from "../../../store/features/products-hooks";
 import { useDispatch } from "react-redux";
 import { productsActions } from "../../../store/features/products-slice";
 import { editProductAction } from "../../../store/features/products-actions";
+import StatusComponent from "../../Status/StatusComponent";
 
 const EditProductPage = () => {
   const params = useParams();
@@ -25,11 +26,14 @@ const EditProductPage = () => {
   };
 
   return (
-    <CreateEditForm
-      onSubmit={onSubmit}
-      product={product}
-      title={`Edit ${product.title}`}
-    />
+    <>
+      <StatusComponent />
+      <CreateEditForm
+        onSubmit={onSubmit}
+        product={product}
+        title={`Edit ${product.title}`}
+      />
+    </>
   );
 };
 

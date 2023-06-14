@@ -12,7 +12,11 @@ const CreateProduct = () => {
     dispatch(addProductAction(formValue));
     navigation(routes.products.path);
   };
-  return <CreateEditForm onSubmit={onSubmit} title="Create Product" />;
+  return (
+    <>
+      <CreateEditForm onSubmit={onSubmit} title="Create Product" />;
+    </>
+  );
 };
 
 export default CreateProduct;

@@ -36,7 +36,7 @@ const productSlice = createSlice({
     },
     addNewProduct(state, action) {
       const newProduct = action.payload;
-      state.products.push(newProduct);
+      state.products.unshift(newProduct);
     },
     getProductsByCategory(state, action) {
       state.productsByCategory = action.payload;

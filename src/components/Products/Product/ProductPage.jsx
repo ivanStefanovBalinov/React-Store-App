@@ -11,6 +11,7 @@ import {
   fetchProductById,
 } from "../../../store/features/products-actions";
 import { useFetchSingleProduct } from "../../../store/features/products-hooks";
+import StatusComponent from "../../Status/StatusComponent";
 
 const ProductPage = () => {
   const params = useParams();
@@ -53,6 +54,7 @@ const ProductPage = () => {
 
   return (
     <div>
+      <StatusComponent />
       <div className="product-wrapper">
         <img
           className="thumbnail"

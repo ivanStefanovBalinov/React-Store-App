@@ -1,0 +1,23 @@
+.status-wrapper {
+  display: flex;
+  background-color: rgba(22, 22, 22, 0.6);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+
+  p {
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .message {
+    padding-right: 300px;
+  }
+}

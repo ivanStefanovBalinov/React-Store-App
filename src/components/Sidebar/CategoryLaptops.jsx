@@ -7,7 +7,6 @@ const CategoryLaptops = () => {
   return (
     <div>
       <SideBar />
-
       <CategoryReusable
         category={"laptops"}
         title={sideBarRouter.laptops.name}
