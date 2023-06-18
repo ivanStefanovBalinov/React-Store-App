@@ -25,6 +25,13 @@ nav {
       font-weight: bold;
       color: #fff;
       box-sizing: border-box;
+
+      .active {
+        color: #8a0af3;
+        border-bottom: 1px solid #8a0af3;
+        padding: 10px 8px;
+        border-radius: 50px;
+      }
     }
   }
 }

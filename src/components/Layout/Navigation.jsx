@@ -1,6 +1,6 @@
 import React from "react";
 import routes from "../../utils/constants";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navigation.scss";
 
 const Navigation = () => {
@@ -12,7 +12,13 @@ const Navigation = () => {
           .map((route) => {
             return (
               <li key={route.name}>
-                <Link to={route.path}>{route.name}</Link>
+                <NavLink
+                  to={route.path}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  end
+                >
+                  {route.name}
+                </NavLink>
               </li>
             );
           })}

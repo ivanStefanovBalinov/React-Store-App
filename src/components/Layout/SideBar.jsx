@@ -3,7 +3,7 @@ import "./SideBar.scss";
 import logo from "../../assets/images/logo-i.png";
 import logoType from "../../assets/images/logo_i_sub.png";
 import { sideBarRouter } from "../../utils/constants";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   return (
@@ -19,7 +19,12 @@ const SideBar = () => {
             {Object.values(sideBarRouter).map((route) => {
               return (
                 <li key={route.name}>
-                  <Link to={route.path}>{route.name}</Link>
+                  <NavLink
+                    to={route.path}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    {route.name}
+                  </NavLink>
                 </li>
               );
             })}
